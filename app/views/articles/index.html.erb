@@ -1,26 +1,27 @@
-<%= link_to "New", articles_new_path %>
-<table>
-    <thead>
-        <tr>
-            <th> ID </th>
-            <th> Title </th>
-            <th> Body </th>
-            <th> Actions </th>
-        </tr>
+<h1> This is my blog </h1>
 
-    </thead>
-    <tbody>
-        <% @articles.each do |article| %>
+    <%= link_to "New Article", articles_new_path, class: 'new-btn' %>
+<div class = 'container'>    
+    <table>
+        <thead>
             <tr>
-                <td> <%= article.id %> </td>
-                <td> <%= article.title %> </td>
-                <td> <%= article.body %> </td>
-                <td> 
-                    <%= link_to "Delete", delete_article_path(article), method: "delete", data: { confirm: "Are you sure?" } %> 
-                    <%= link_to "Edit", edit_article_path(article) %> 
-                    <%= link_to "Show", show_article_path(article) %> 
-                </td>
+                <th> Title </th>
+                <th> Body </th>
+                <th> Actions </th>
             </tr>
-        <% end %>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <% @articles.each do |article| %>
+                <tr>
+                    <td> <%= article.title %> </td>
+                    <td> <%= article.body %> </td>
+                    <td class = 'actions'>                     
+                        <%= link_to "Show", show_article_path(article), class: 'action' %> 
+                        <%= link_to "Edit", edit_article_path(article), class: 'action' %> 
+                        <%= link_to "Delete", delete_article_path(article), method: "delete", class: 'action', data: { confirm: "Are you sure?" } %> 
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

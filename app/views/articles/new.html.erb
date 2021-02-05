@@ -1,7 +1,10 @@
-<%= form_with scope: :article, url: articles_new_path do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-    <%= form.submit "Submit" %>
-<% end %>
+<h1> New Article </h1>
+<div class = 'input-cont'>
+    <%= form_with scope: :article, class: 'form', url: articles_new_path do |form| %>
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'text-field' %>
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'text-area' %>
+        <%= form.submit "Submit", class: 'button' %>
+    <% end %>
+</div>

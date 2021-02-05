@@ -1,7 +1,10 @@
-<%= form_with model: @article, url: update_article_path, method: :patch do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-    <%= form.submit "Submit" %>
-<% end %>
+<h1> Edit <%= @article.title %> </h1>
+<div class = 'input-cont'>
+    <%= form_with model: @article, url: update_article_path, class: 'form', method: :patch do |form| %>
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'text-field' %>
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'text-area' %>
+        <%= form.submit "Submit", class: 'button' %>
+    <% end %>
+</div>
