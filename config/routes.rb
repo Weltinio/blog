@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'articles#home'
   get 'articles/', to: 'articles#index'
   get 'articles/new', to: 'articles#new'
   get 'articles/:id', to: 'articles#show', as: 'show_article'
