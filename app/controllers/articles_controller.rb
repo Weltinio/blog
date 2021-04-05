@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
       redirect_to articles_path
     else
       render :new
+    end
   end
 
   def delete
